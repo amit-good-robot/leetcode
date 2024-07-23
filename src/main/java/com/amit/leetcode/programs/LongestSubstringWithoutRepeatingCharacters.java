@@ -1,7 +1,5 @@
 package com.amit.leetcode.programs;
 
-import com.amit.leetcode.annotation.ExecutionTime;
-
 import java.util.HashSet;
 import java.util.Set;
 
@@ -15,7 +13,6 @@ public class LongestSubstringWithoutRepeatingCharacters {
         System.out.println(new LongestSubstringWithoutRepeatingCharacters().lengthOfLongestSubstring(s));
     }
 
-    @ExecutionTime
     public int lengthOfLongestSubstring(String s) {
         Set<Character> longestSubstringSet = new HashSet<>();
         int leftPointer = 0;

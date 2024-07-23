@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class ExecutionTimeAdvice {
 
-    @Around("@annotation(com.amit.leetcode.annotation.ExecutionTime)")
+    @Around("@annotation(ExecutionTime)")
     public Object executionTime(ProceedingJoinPoint point) throws Throwable {
         long startTime = System.currentTimeMillis();
         Object object = point.proceed();
