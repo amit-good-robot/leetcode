@@ -10,12 +10,12 @@ import java.util.Set;
  */
 public class LongestSubstringWithoutRepeatingCharacters {
 
-    @ExecutionTime
     public static void main(String[] args) {
         String s = "abcadf";
         System.out.println(new LongestSubstringWithoutRepeatingCharacters().lengthOfLongestSubstring(s));
     }
 
+    @ExecutionTime
     public int lengthOfLongestSubstring(String s) {
         Set<Character> longestSubstringSet = new HashSet<>();
         int leftPointer = 0;
