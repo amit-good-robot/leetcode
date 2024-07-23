@@ -12,21 +12,24 @@ public class LongestSubstringWithoutRepeatingCharacters {
 
     @ExecutionTime
     public static void main(String[] args) {
-        String s = "bbbbb";
+        String s = "abcadf";
         System.out.println(new LongestSubstringWithoutRepeatingCharacters().lengthOfLongestSubstring(s));
     }
 
     public int lengthOfLongestSubstring(String s) {
-        Set<Character> longestSubstring = new HashSet<>();
-        int lp = 0;
+        Set<Character> longestSubstringSet = new HashSet<>();
+        int leftPointer = 0;
         int maxLength = 0;
 
-        for (int rp = lp; rp < s.length(); rp++) {
-            if (!longestSubstring.add(s.charAt(rp))) {
-                longestSubstring.clear();
-                lp++;
+        for (int rightPointer = 0; rightPointer < s.length(); rightPointer++) {
+            if (longestSubstringSet.add(s.charAt(rightPointer))) {
+                maxLength = Math.max(maxLength, rightPointer - leftPointer + 1);
             } else {
-                maxLength = Math.max(maxLength, rp - lp + 1);
+                while (longestSubstringSet.contains(s.charAt(rightPointer))) {
+                    longestSubstringSet.remove(s.charAt(leftPointer));
+                    leftPointer++;
+                }
+                longestSubstringSet.add(s.charAt(rightPointer));
             }
         }
         return maxLength;
