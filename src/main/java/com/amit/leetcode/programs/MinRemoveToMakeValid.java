@@ -10,8 +10,7 @@ import java.util.Stack;
 public class MinRemoveToMakeValid {
 
     public static void main(String[] args) {
-        MinRemoveToMakeValid minRemoveToMakeValid = new MinRemoveToMakeValid();
-        String output = minRemoveToMakeValid.minRemoveToMakeValid("))((");
+        String output = new MinRemoveToMakeValid().minRemoveToMakeValid("))((");
         System.out.println("output : " + output);
     }
 
